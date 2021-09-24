@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id "org.sonarqube"
 }
 
 android {
@@ -31,6 +32,21 @@ android {
         jvmTarget = '1.8'
     }
 }
+
+sonarqube
+        {
+            properties
+                    {
+                        property "sonar.projectName", "CameraApp"
+                        property "sonar.projectKey", "CameraApp"
+                        property "sonar.language", "kotlin"
+                        property "sonar.sources", "src/main/java/"
+                        property "sonar.binaries", "build"
+                        property "sonar.sourceEncoding", "UTF-8"
+                        property "sonar.login", "admin"
+                        property "sonar.password", "Ankush1234"
+                    }
+        }
 
 dependencies {
 
